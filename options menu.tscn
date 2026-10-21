@@ -1,0 +1,247 @@
+[gd_scene format=3 uid="uid://hru2dl62cyyi"]
+
+[ext_resource type="Script" uid="uid://b8ytyxtqtfr3l" path="res://options_menu.gd" id="1_q3ydh"]
+[ext_resource type="Texture2D" uid="uid://68sxbmlebvhw" path="res://Assets/space.jpg" id="2_q3ydh"]
+[ext_resource type="FontFile" uid="uid://b7s2ano07fwp5" path="res://Assets/ByteBounce.ttf" id="3_q47ni"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i5qic"]
+texture = ExtResource("2_q3ydh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6rga"]
+bg_color = Color(0.24840015, 0.24840018, 0.24840015, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q3ydh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3ydh"]
+bg_color = Color(0.07284262, 0.072842635, 0.072842576, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.29411766)
+shadow_size = 1
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j54kd"]
+bg_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.29411766)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q47ni"]
+bg_color = Color(0.13682577, 0.13682574, 0.13682571, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.29411766)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m7e60"]
+
+[node name="Options Menu" type="Control" unique_id=2076396663]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q3ydh")
+
+[node name="BG" type="Panel" parent="." unique_id=559053057]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_i5qic")
+
+[node name="idk" type="Panel" parent="." unique_id=1723395634]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -123.5
+offset_right = 98.0
+offset_bottom = 123.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n6rga")
+
+[node name="Sound" type="Label" parent="." unique_id=932533598]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -106.0
+offset_right = 39.0
+offset_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_q47ni")
+theme_override_font_sizes/font_size = 13
+text = "Master Volume"
+
+[node name="Volume IN" type="HSlider" parent="." unique_id=1989792018]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -109.0
+offset_right = 91.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Debug mode" type="Label" parent="." unique_id=1485940773]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -83.0
+offset_right = 39.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_q47ni")
+theme_override_font_sizes/font_size = 13
+text = "Debug Mode"
+
+[node name="Debug mode IN" type="CheckButton" parent="." unique_id=572119792]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -90.0
+offset_right = 61.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q3ydh")
+
+[node name="DAS" type="Label" parent="." unique_id=813561491]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -59.0
+offset_right = 39.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_q47ni")
+theme_override_font_sizes/font_size = 13
+text = "Delay Auto Shift"
+
+[node name="DAS IN" type="SpinBox" parent="." unique_id=1859357291]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 21.0
+offset_top = -62.0
+offset_right = 107.5625
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.53, 0.53)
+min_value = 1.0
+max_value = 20.0
+value = 1.0
+
+[node name="ARR" type="Label" parent="." unique_id=38027130]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -36.0
+offset_right = 39.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_q47ni")
+theme_override_font_sizes/font_size = 13
+text = "Auto Repeat Rate"
+
+[node name="ARR IN" type="SpinBox" parent="." unique_id=1288189296]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 21.0
+offset_top = -39.0
+offset_right = 107.5625
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.53, 0.53)
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+
+[node name="Exit" type="Button" parent="." unique_id=380338394]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = 99.0
+offset_right = 91.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_q47ni")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q3ydh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j54kd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q47ni")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m7e60")
+text = "Exit
+"
+
+[connection signal="value_changed" from="Volume IN" to="." method="_on_h_slider_value_changed"]
+[connection signal="toggled" from="Debug mode IN" to="." method="_on_debug_mode_in_toggled"]
+[connection signal="value_changed" from="DAS IN" to="." method="_on_das_in_value_changed"]
+[connection signal="value_changed" from="ARR IN" to="." method="_on_arr_in_value_changed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

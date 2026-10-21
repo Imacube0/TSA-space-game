@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://c6dlvmrv1cir4"]
+
+[ext_resource type="Script" uid="uid://1wisoiwfjf6y" path="res://Main menu.gd" id="1_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://68sxbmlebvhw" path="res://Assets/space.jpg" id="2_jix8l"]
+[ext_resource type="FontFile" uid="uid://b7s2ano07fwp5" path="res://Assets/ByteBounce.ttf" id="3_glbon"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xwd2w"]
+texture = ExtResource("2_jix8l")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
+bg_color = Color(0.07284262, 0.072842635, 0.072842576, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e48y"]
+bg_color = Color(0.27752784, 0.27752766, 0.27752778, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epypp"]
+bg_color = Color(0.13682577, 0.13682574, 0.13682571, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0e48y"]
+
+[node name="Main Menu" type="Control" unique_id=1206203647]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fu7sn")
+
+[node name="Background" type="Panel" parent="." unique_id=1619825071]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xwd2w")
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=208107168]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.177
+anchor_top = 0.47800002
+anchor_right = 0.823
+anchor_bottom = 0.83000004
+offset_left = 0.15499878
+offset_top = -0.05999756
+offset_right = -0.15499878
+offset_bottom = -0.1000061
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="Buttons" unique_id=167385897]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_glbon")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q6r6c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0e48y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_epypp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0e48y")
+text = "Start game"
+
+[node name="Options" type="Button" parent="Buttons" unique_id=185072248]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_glbon")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q6r6c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0e48y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_epypp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0e48y")
+text = "Options"
+
+[node name="Keybinds" type="Button" parent="Buttons" unique_id=890306678]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_glbon")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q6r6c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0e48y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_epypp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0e48y")
+text = "Keybinds
+"
+
+[node name="Label" type="Label" parent="." unique_id=360856218]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -138.0
+offset_top = 42.0
+offset_right = 138.0
+offset_bottom = 89.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.47058824)
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("3_glbon")
+theme_override_font_sizes/font_size = 67
+text = "Space game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Buttons/Keybinds" to="." method="_on_keybinds_pressed"]
