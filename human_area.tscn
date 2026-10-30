@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://b6blpg5u22802" path="res://player.gd" id="2_14c65"]
 [ext_resource type="Texture2D" uid="uid://doem4vckqx51x" path="res://Assets/0x72_16x16RobotTileset.v1.png" id="3_bkqbv"]
 [ext_resource type="Script" uid="uid://bnggdqgvb3ct5" path="res://bg.gd" id="3_dtkwf"]
+[ext_resource type="Script" uid="uid://bej8ljrfwmnlj" path="res://rope.gd" id="7_4tn0l"]
+[ext_resource type="Texture2D" uid="uid://8mfoqptiqd63" path="res://Assets/rooe.jpg" id="7_dbagn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7i4tb"]
 texture = ExtResource("1_largg")
@@ -406,6 +408,13 @@ limit_right = 576
 limit_bottom = 145
 limit_smoothed = true
 
+[node name="Rope" type="Line2D" parent="Player" unique_id=1192228610]
+position = Vector2(-2, -1)
+width = 2.0
+texture = ExtResource("7_dbagn")
+texture_mode = 2
+script = ExtResource("7_4tn0l")
+
 [node name="TileMap" type="TileMap" parent="." unique_id=886935209]
 tile_set = SubResource("TileSet_7i4tb")
 format = 2
@@ -417,3 +426,5 @@ offset_top = -96.0
 offset_right = 112.0
 offset_bottom = -73.0
 label_settings = SubResource("LabelSettings_dtkwf")
+
+[connection signal="rope" from="Player" to="Player/Rope" method="_on_player_rope"]

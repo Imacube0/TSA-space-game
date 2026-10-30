@@ -5,13 +5,18 @@ const SPEED = 160.0
 const JUMP_VELOCITY = -350.0
 var jump_buffer_time = 0.1
 var jump_buffer_timer: float = 0
+var rope_mode = false
+signal rope()
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("jump"):
 		# Starts jump buffer
 		jump_buffer_timer = jump_buffer_time
-
+	if Input.is_action_just_pressed("rope"):
+		rope_mode = !rope_mode
+	if Input.is_action_just_pressed("left_click") and rope_mode:
+		rope.emit()
 func _process(delta: float) -> void:
 	jump_buffer_timer -= delta
 
@@ -31,8 +36,10 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
-		set_scale(Vector2(direction, 1))
-		rotation_degrees = 0
+		if direction > 0:
+			animated_sprite_2d.flip_h = false 
+		else: 
+			animated_sprite_2d.flip_h = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
